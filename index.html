@@ -289,7 +289,8 @@
 
         
           <h2 id="安装httpd"><a href="#安装httpd" class="headerlink" title="安装httpd"></a>安装httpd</h2><p>Centos 安装httpd非常简单，<code>yum</code>安装即可<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum instal httpd</span><br></pre></td></tr></table></figure></p>
-<h2 id="配置转发规则示例"><a href="#配置转发规则示例" class="headerlink" title="配置转发规则示例"></a>配置转发规则示例</h2><p>在部署Java Web应用时，通常会把应用部署在一个Web容器（如Tomcat），再部署一个HTTP服务器转发请求。<br>例如部署Tomcat监听8080端口，部署Apache Httpd监听80端口，再转发给tomcat的8080端口。</p>
+<h2 id="配置转发规则示例"><a href="#配置转发规则示例" class="headerlink" title="配置转发规则示例"></a>配置转发规则示例</h2><p>在部署Java Web应用时，通常会把应用部署在一个Web容器（如Tomcat），再部署一个HTTP服务器转发请求。</p>
+<p>例如部署Tomcat监听8080端口，部署Apache Httpd监听80端口，再转发给tomcat的8080端口。</p>
 <p>可以在一台服务器上部署多个应用和配置多个域名，对于访问者来说感觉像访问两个不同的网站一样。<br>在示例中启动了两个Tomcat实例，分别监听8080和8081端口，部署两个不同的应用。然后将两个域名均指向这台机器的ip，Apache通过访问者使用的域名来执行不同的转发。</p>
           <div class="read-more">
             <a href="/2017/12/15/Centos Apache-Htpd端口转发配置/" class="read-more-link">阅读更多</a>
