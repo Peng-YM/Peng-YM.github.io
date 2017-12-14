@@ -17,10 +17,12 @@
 
 
 
-  <meta name="description" content="Stay hungry，stay foolish."/>
+  <meta name="description" content="tmux使用指南"/>
 
 
 
+
+  <meta name="keywords" content="折腾工具, Pioneer" />
 
 
 
@@ -40,7 +42,7 @@
 
 
 
-<link rel="canonical" href="http://peng-ym.github.io/"/>
+<link rel="canonical" href="http://peng-ym.github.io/2017/12/15/tmux使用指南/"/>
 
 
 <link rel="stylesheet" type="text/css" href="/css/style.css?v=2.6.0" />
@@ -79,7 +81,7 @@
 
 
 
-    <title> Pioneer </title>
+    <title> tmux使用指南 - Pioneer </title>
   </head>
 
   <body><div id="mobile-navbar" class="mobile-navbar">
@@ -208,14 +210,12 @@
         <div class="content-wrapper">
           <div id="content" class="content">
             
-  <section id="posts" class="posts">
-    
-      
+  
   <article class="post">
     <header class="post-header">
       <h1 class="post-title">
         
-          <a class="post-link" href="/2017/12/15/tmux使用指南/">tmux使用指南</a>
+          tmux使用指南
         
       </h1>
 
@@ -230,14 +230,17 @@
 
     
     
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#介绍"><span class="toc-text"><a href="#&#x4ECB;&#x7ECD;" class="headerlink" title="&#x4ECB;&#x7ECD;"></a>&#x4ECB;&#x7ECD;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装"><span class="toc-text"><a href="#&#x5B89;&#x88C5;" class="headerlink" title="&#x5B89;&#x88C5;"></a>&#x5B89;&#x88C5;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#基本操作"><span class="toc-text"><a href="#&#x57FA;&#x672C;&#x64CD;&#x4F5C;" class="headerlink" title="&#x57FA;&#x672C;&#x64CD;&#x4F5C;"></a>&#x57FA;&#x672C;&#x64CD;&#x4F5C;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置文件"><span class="toc-text"><a href="#&#x914D;&#x7F6E;&#x6587;&#x4EF6;" class="headerlink" title="&#x914D;&#x7F6E;&#x6587;&#x4EF6;"></a>&#x914D;&#x7F6E;&#x6587;&#x4EF6;</span></a></li></ol>
+    </div>
+  </div>
+
 
     <div class="post-content">
       
-        
-        
-
-        
-          <h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>Tmux 简单来说就是终端里的『窗口管理器』，如果我使用终端登录到远程主机并运行前台程序，那么这个窗口等于就被占用了，想要看一下 CPU 的使用率，就得再连接一次。但是如果在远程主机上运行 tmux，那么就可以开启多个控制台（类似于窗口），相当高效。可以通过下面的视频看看大神操作：</p>
+        <h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>Tmux 简单来说就是终端里的『窗口管理器』，如果我使用终端登录到远程主机并运行前台程序，那么这个窗口等于就被占用了，想要看一下 CPU 的使用率，就得再连接一次。但是如果在远程主机上运行 tmux，那么就可以开启多个控制台（类似于窗口），相当高效。可以通过下面的视频看看大神操作：</p>
 <iframe width="264" height="238" src="https://www.youtube.com/embed/JXwS7z6Dqic" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
 
 <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>使用包管理工具安装即可。例如：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install tmux</span><br></pre></td></tr></table></figure></p>
@@ -278,28 +281,70 @@
 <p><strong>推荐配置如下：</strong>（来自 Pragmatic Tmux）</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br></pre></td><td class="code"><pre><span class="line"># workflows/tmux.conf</span><br><span class="line"># Our .tmux.conf file</span><br><span class="line"></span><br><span class="line"># Setting the prefix from C-b to C-a</span><br><span class="line">set -g prefix C-a</span><br><span class="line"></span><br><span class="line"># Free the original Ctrl-b prefix keybinding</span><br><span class="line">unbind C-b</span><br><span class="line"></span><br><span class="line">#setting the delay between prefix and command</span><br><span class="line">set -sg escape-time 1</span><br><span class="line"></span><br><span class="line"># Ensure that we can send Ctrl-A to other apps</span><br><span class="line">bind C-a send-prefix</span><br><span class="line"></span><br><span class="line"># Set the base index for windows to 1 instead of 0</span><br><span class="line">set -g base-index 1</span><br><span class="line"></span><br><span class="line"># Set the base index for panes to 1 instead of 0</span><br><span class="line">setw -g pane-base-index 1</span><br><span class="line"></span><br><span class="line"># Reload the file with Prefix r</span><br><span class="line">bind r source-file ~/.tmux.conf \; display &quot;Reloaded!&quot;</span><br><span class="line"></span><br><span class="line"># splitting panes</span><br><span class="line">bind | split-window -h</span><br><span class="line">bind - split-window -v</span><br><span class="line"></span><br><span class="line"># moving between panes</span><br><span class="line">bind h select-pane -L</span><br><span class="line">bind j select-pane -D</span><br><span class="line">bind k select-pane -U</span><br><span class="line">bind l select-pane -R</span><br><span class="line"></span><br><span class="line"># Quick pane selection</span><br><span class="line">bind -r C-h select-window -t :-</span><br><span class="line">bind -r C-l select-window -t :+</span><br><span class="line"></span><br><span class="line"># Pane resizing</span><br><span class="line">bind -r H resize-pane -L 5</span><br><span class="line">bind -r J resize-pane -D 5</span><br><span class="line">bind -r K resize-pane -U 5</span><br><span class="line">bind -r L resize-pane -R 5</span><br><span class="line"></span><br><span class="line"># mouse support - set to on if you want to use the mouse</span><br><span class="line">setw -g mode-mouse off</span><br><span class="line">set -g mouse-select-pane off</span><br><span class="line">set -g mouse-resize-pane off</span><br><span class="line">set -g mouse-select-window off</span><br><span class="line"></span><br><span class="line"># Set the default terminal mode to 256color mode</span><br><span class="line">set -g default-terminal &quot;screen-256color&quot;</span><br><span class="line"></span><br><span class="line"># enable activity alerts</span><br><span class="line">setw -g monitor-activity on</span><br><span class="line">set -g visual-activity on</span><br><span class="line"></span><br><span class="line"># set the status line&apos;s colors</span><br><span class="line">set -g status-fg white</span><br><span class="line">set -g status-bg black</span><br><span class="line"></span><br><span class="line"># set the color of the window list</span><br><span class="line">setw -g window-status-fg cyan</span><br><span class="line">setw -g window-status-bg default</span><br><span class="line">setw -g window-status-attr dim</span><br><span class="line"></span><br><span class="line"># set colors for the active window</span><br><span class="line">setw -g window-status-current-fg white</span><br><span class="line">setw -g window-status-current-bg red</span><br><span class="line">setw -g window-status-current-attr bright</span><br><span class="line"></span><br><span class="line"># pane colors</span><br><span class="line">set -g pane-border-fg green</span><br><span class="line">set -g pane-border-bg black</span><br><span class="line">set -g pane-active-border-fg white</span><br><span class="line">set -g pane-active-border-bg yellow</span><br><span class="line"></span><br><span class="line"># Command / message line</span><br><span class="line">set -g message-fg white</span><br><span class="line">set -g message-bg black</span><br><span class="line">set -g message-attr bright</span><br><span class="line"></span><br><span class="line"># Status line left side</span><br><span class="line">set -g status-left-length 40</span><br><span class="line">set -g status-left &quot;#[fg=green]Session: #S #[fg=yellow]#I #[fg=cyan]#P&quot;</span><br><span class="line"></span><br><span class="line">set -g status-utf8 on</span><br><span class="line"></span><br><span class="line"># Status line right side</span><br><span class="line"># 15% | 28 Nov 18:15</span><br><span class="line">set -g status-right &quot;#(~/battery Discharging) | #[fg=cyan]%d %b %R&quot;</span><br><span class="line"></span><br><span class="line"># Update the status bar every sixty seconds</span><br><span class="line">set -g status-interval 60</span><br><span class="line"></span><br><span class="line"># Center the window list</span><br><span class="line">set -g status-justify centre</span><br><span class="line"></span><br><span class="line"># enable vi keys.</span><br><span class="line">setw -g mode-keys vi</span><br><span class="line"></span><br><span class="line"># Open panes in the same directory using the tmux-panes script</span><br><span class="line">unbind v</span><br><span class="line">unbind n</span><br><span class="line">bind v send-keys &quot; ~/tmux-panes -h&quot; C-m</span><br><span class="line">bind n send-keys &quot; ~/tmux-panes -v&quot; C-m</span><br><span class="line"></span><br><span class="line"># Maximize and restore a pane</span><br><span class="line">unbind Up</span><br><span class="line">bind Up new-window -d -n tmp \; swap-pane -s tmp.1 \; select-window -t tmp</span><br><span class="line">unbind Down</span><br><span class="line">bind Down last-window \; swap-pane -s tmp.1 \; kill-window -t tmp</span><br><span class="line"></span><br><span class="line"># Log output to a text file on demand</span><br><span class="line">bind P pipe-pane -o &quot;cat &gt;&gt;~/#W.log&quot; \; display &quot;Toggled logging to ~/#W.log&quot;</span><br></pre></td></tr></table></figure>
 
-        
       
     </div>
 
     
+      
+      
 
+  <div class="post-copyright">
+    <p class="copyright-item">
+      <span>原文作者: </span>
+      <a href="http://peng-ym.github.io">Peng-YM</a>
+    </p>
+    <p class="copyright-item">
+      <span>原文链接: </span>
+      <a href="http://peng-ym.github.io/2017/12/15/tmux使用指南/">http://peng-ym.github.io/2017/12/15/tmux使用指南/</a>
+    </p>
+    <p class="copyright-item">
+      <span>许可协议: </span>
+      
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
+    </p>
+  </div>
+
+
+
+      
+      
     
 
-  </article>
-
     
-  </section>
-
-  
-  <nav class="pagination">
+      <footer class="post-footer">
+        
+          <div class="post-tags">
+            
+              <a href="/tags/折腾工具/">折腾工具</a>
+            
+          </div>
+        
+        
+        
+  <nav class="post-nav">
     
     
   </nav>
 
+      </footer>
+    
+
+  </article>
+
 
           </div>
           
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
 
         </div>
       </main>
@@ -358,6 +403,24 @@
     </div>
 
     
+  
+  <script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'http://peng-ym.github.io/2017/12/15/tmux使用指南/';
+        this.page.identifier = '2017/12/15/tmux使用指南/';
+        this.page.title = 'tmux使用指南';
+    };
+    (function() {
+    var d = document, s = d.createElement('script');
+
+    s.src = '//peng1m.disqus.com/embed.js';
+
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();  
+  </script>
+
+
 
 
     
