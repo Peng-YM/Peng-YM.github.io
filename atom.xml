@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://peng-ym.github.io/"/>
-  <updated>2017-12-14T16:54:47.676Z</updated>
+  <updated>2017-12-17T05:35:09.986Z</updated>
   <id>http://peng-ym.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>在Mac上使用tree命令浏览文件树结构(转)</title>
+    <link href="http://peng-ym.github.io/2017/12/17/%E5%9C%A8Mac%E4%B8%8A%E4%BD%BF%E7%94%A8tree%E5%91%BD%E4%BB%A4%E6%B5%8F%E8%A7%88%E6%96%87%E4%BB%B6%E6%A0%91%E7%BB%93%E6%9E%84-%E8%BD%AC/"/>
+    <id>http://peng-ym.github.io/2017/12/17/在Mac上使用tree命令浏览文件树结构-转/</id>
+    <published>2017-12-17T05:27:57.000Z</published>
+    <updated>2017-12-17T05:35:09.986Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h2><ol><li><p>编辑<code>.bashrc</code>或者<code>.zshrc</code>，在文件中添加一行：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">alias</span> tree=<span class="string">"find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"</span></span><br></pre></td></tr></table></figure></li><li><p>应用更改</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> .zshrc</span><br></pre></td></tr></table></figure></li><li><p>在文件夹下使用<code>tree</code>命令就可以看到当前文件夹的层级结构了<br><img src="https://ws1.sinaimg.cn/large/c2dfc71dgy1fmjpgcu6dij20i50hqtaq.jpg" alt="效果图"></p></li></ol><p><a href="http://osxdaily.com/2016/09/09/view-folder-tree-terminal-mac-os-tree-equivalent/" target="_blank" rel="noopener">原文地址</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;命令&quot;&gt;&lt;a href=&quot;#命令&quot; class=&quot;headerlink&quot; title=&quot;命令&quot;&gt;&lt;/a&gt;命令&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;编辑&lt;code&gt;.bashrc&lt;/code&gt;或者&lt;code&gt;.zshrc&lt;/code&gt;，在文件中添加一行：&lt;/p&gt;
+&lt;fi
+      
+    
+    </summary>
+    
+    
+      <category term="折腾工具" scheme="http://peng-ym.github.io/tags/%E6%8A%98%E8%85%BE%E5%B7%A5%E5%85%B7/"/>
+    
+  </entry>
   
   <entry>
     <title>利用Python IMAP、SMTP进行邮件收发</title>

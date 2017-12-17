@@ -17,10 +17,12 @@
 
 
 
-  <meta name="description" content="Stay hungry，stay foolish."/>
+  <meta name="description" content="在Mac上使用tree命令浏览文件树结构(转)"/>
 
 
 
+
+  <meta name="keywords" content="折腾工具, Pioneer" />
 
 
 
@@ -40,7 +42,7 @@
 
 
 
-<link rel="canonical" href="http://peng-ym.github.io/tags/折腾工具/"/>
+<link rel="canonical" href="http://peng-ym.github.io/2017/12/17/在Mac上使用tree命令浏览文件树结构-转/"/>
 
 
 <link rel="stylesheet" type="text/css" href="/css/style.css?v=2.6.0" />
@@ -89,11 +91,7 @@
 
 
 
-    <title>
-  
-    折腾工具 · Pioneer
-  
-</title>
+    <title> 在Mac上使用tree命令浏览文件树结构(转) - Pioneer </title>
   </head>
 
   <body><div id="mobile-navbar" class="mobile-navbar">
@@ -223,58 +221,117 @@
           <div id="content" class="content">
             
   
-  <section id="archive" class="archive">
-    
-      
-        <div class="archive-title tag">
-          <h2 class="archive-name">折腾工具</h2>
-        </div>
-      
-    
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          在Mac上使用tree命令浏览文件树结构(转)
+        
+      </h1>
 
-    
-      
-
-      <div class="archive-post">
-        <span class="archive-post-time">
-          
-            2017-12-17
-          
+      <div class="post-meta">
+        <span class="post-time">
+          2017-12-17
         </span>
-        <span class="archive-post-title">
-          <a href="/2017/12/17/在Mac上使用tree命令浏览文件树结构-转/" class="archive-post-link">
-            在Mac上使用tree命令浏览文件树结构(转)
-          </a>
-        </span>
+        
+        
       </div>
+    </header>
+
+    
+    
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#命令"><span class="toc-text"><a href="#&#x547D;&#x4EE4;" class="headerlink" title="&#x547D;&#x4EE4;"></a>&#x547D;&#x4EE4;</span></a></li></ol>
+    </div>
+  </div>
+
+
+    <div class="post-content">
+      
+        <h2 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h2><ol>
+<li><p>编辑<code>.bashrc</code>或者<code>.zshrc</code>，在文件中添加一行：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">alias</span> tree=<span class="string">"find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>应用更改</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> .zshrc</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在文件夹下使用<code>tree</code>命令就可以看到当前文件夹的层级结构了<br><img src="https://ws1.sinaimg.cn/large/c2dfc71dgy1fmjpgcu6dij20i50hqtaq.jpg" alt="效果图"></p>
+</li>
+</ol>
+<p><a href="http://osxdaily.com/2016/09/09/view-folder-tree-terminal-mac-os-tree-equivalent/" target="_blank" rel="noopener">原文地址</a></p>
+
+      
+    </div>
+
     
       
+      
 
-      <div class="archive-post">
-        <span class="archive-post-time">
-          
-            2017-12-15
-          
-        </span>
-        <span class="archive-post-title">
-          <a href="/2017/12/15/tmux使用指南/" class="archive-post-link">
-            tmux使用指南
-          </a>
-        </span>
-      </div>
-    
-  </section>
+  <div class="post-copyright">
+    <p class="copyright-item">
+      <span>原文作者: </span>
+      <a href="http://peng-ym.github.io">Peng-YM</a>
+    </p>
+    <p class="copyright-item">
+      <span>原文链接: </span>
+      <a href="http://peng-ym.github.io/2017/12/17/在Mac上使用tree命令浏览文件树结构-转/">http://peng-ym.github.io/2017/12/17/在Mac上使用tree命令浏览文件树结构-转/</a>
+    </p>
+    <p class="copyright-item">
+      <span>许可协议: </span>
+      
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
+    </p>
+  </div>
 
-  
-  <nav class="pagination">
+
+
+      
+      
     
+
+    
+      <footer class="post-footer">
+        
+          <div class="post-tags">
+            
+              <a href="/tags/折腾工具/">折腾工具</a>
+            
+          </div>
+        
+        
+        
+  <nav class="post-nav">
+    
+    
+      <a class="next" href="/2017/12/15/利用Python-IMAP、SMTP进行邮件收发/">
+        <span class="next-text nav-default">利用Python IMAP、SMTP进行邮件收发</span>
+        <span class="prev-text nav-mobile">下一篇</span>
+        <i class="iconfont icon-right"></i>
+      </a>
     
   </nav>
 
+      </footer>
+    
+
+  </article>
 
 
           </div>
           
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
 
         </div>
       </main>
@@ -336,9 +393,9 @@
   
   <script type="text/javascript">
     var disqus_config = function () {
-        this.page.url = '';
-        this.page.identifier = 'tags/折腾工具/index.html';
-        this.page.title = '';
+        this.page.url = 'http://peng-ym.github.io/2017/12/17/在Mac上使用tree命令浏览文件树结构-转/';
+        this.page.identifier = '2017/12/17/在Mac上使用tree命令浏览文件树结构-转/';
+        this.page.title = '在Mac上使用tree命令浏览文件树结构(转)';
     };
     (function() {
     var d = document, s = d.createElement('script');
