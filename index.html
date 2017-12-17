@@ -248,11 +248,13 @@
 
         
           <h2 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h2><ol>
-<li><p>编辑<code>.bashrc</code>或者<code>.zshrc</code>，在文件中添加一行：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">alias</span> tree=<span class="string">"find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"</span></span><br></pre></td></tr></table></figure>
+<li>编辑<code>.bashrc</code>或者<code>.zshrc</code>，在文件中添加一行：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ vim .zshrc</span><br></pre></td></tr></table></figure>
 </li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">alias</span> tree=<span class="string">"find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"</span></span><br></pre></td></tr></table></figure>
+<ol>
 <li><p>应用更改</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> .zshrc</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">source</span> .zshrc</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>在文件夹下使用<code>tree</code>命令就可以看到当前文件夹的层级结构了<br><img src="https://ws1.sinaimg.cn/large/c2dfc71dgy1fmjpgcu6dij20i50hqtaq.jpg" alt="效果图"></p>
 </li>
