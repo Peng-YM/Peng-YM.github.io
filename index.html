@@ -247,7 +247,7 @@
         
 
         
-          <h2 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h2><ol>
+          <h2 id="使用alias命令"><a href="#使用alias命令" class="headerlink" title="使用alias命令"></a>使用alias命令</h2><ol>
 <li><p>编辑<code>.bashrc</code>或者<code>.zshrc</code>，在文件中添加一行：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ vim .zshrc</span><br><span class="line"><span class="built_in">alias</span> tree=<span class="string">"find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"</span></span><br></pre></td></tr></table></figure>
 </li>
@@ -257,6 +257,7 @@
 <li><p>在文件夹下使用<code>tree</code>命令就可以看到当前文件夹的层级结构了<br><img src="https://ws1.sinaimg.cn/large/c2dfc71dgy1fmjpgcu6dij20i50hqtaq.jpg" alt="效果图"></p>
 </li>
 </ol>
+<h2 id="安装tree包"><a href="#安装tree包" class="headerlink" title="安装tree包"></a>安装tree包</h2><p>如果想要更多功能，可以直接使用unix的<code>tree</code>包。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ brew install tree</span><br></pre></td></tr></table></figure></p>
 <p><a href="http://osxdaily.com/2016/09/09/view-folder-tree-terminal-mac-os-tree-equivalent/" target="_blank" rel="noopener">原文地址</a></p>
 
         
@@ -452,8 +453,10 @@
   <span class="copyright-year">
     
     &copy; 
+     
+      2017 - 
     
-    2017
+    2018
 
     <span class="heart">
       <i class="iconfont icon-heart"></i>
