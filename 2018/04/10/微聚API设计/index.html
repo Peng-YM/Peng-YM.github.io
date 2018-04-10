@@ -17,10 +17,12 @@
 
 
 
-  <meta name="description" content="Stay hungry，stay foolish."/>
+  <meta name="description" content="微聚API设计"/>
 
 
 
+
+  <meta name="keywords" content="Android, Pioneer" />
 
 
 
@@ -40,7 +42,7 @@
 
 
 
-<link rel="canonical" href="http://peng-ym.github.io/"/>
+<link rel="canonical" href="http://peng-ym.github.io/2018/04/10/微聚API设计/"/>
 
 
 <link rel="stylesheet" type="text/css" href="/css/style.css?v=2.6.0" />
@@ -89,7 +91,7 @@
 
 
 
-    <title> Pioneer </title>
+    <title> 微聚API设计 - Pioneer </title>
   </head>
 
   <body><div id="mobile-navbar" class="mobile-navbar">
@@ -218,14 +220,12 @@
         <div class="content-wrapper">
           <div id="content" class="content">
             
-  <section id="posts" class="posts">
-    
-      
+  
   <article class="post">
     <header class="post-header">
       <h1 class="post-title">
         
-          <a class="post-link" href="/2018/04/10/微聚API设计/">微聚API设计</a>
+          微聚API设计
         
       </h1>
 
@@ -240,14 +240,17 @@
 
     
     
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#API-Design-Document-v0-1"><span class="toc-text"><a href="#API-Design-Document-v0-1" class="headerlink" title="API Design Document v0.1"></a>API Design Document v0.1</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Table-of-Content"><span class="toc-text"><a href="#Table-of-Content" class="headerlink" title="Table of Content"></a>Table of Content</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Conventions"><span class="toc-text"><a href="#Conventions" class="headerlink" title="Conventions"></a>Conventions</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Use-nouns-but-no-verbs"><span class="toc-text"><a href="#1-Use-nouns-but-no-verbs" class="headerlink" title="1. Use nouns but no verbs"></a>1. Use nouns but no verbs</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Use-plural-nouns"><span class="toc-text"><a href="#2-Use-plural-nouns" class="headerlink" title="2. Use plural nouns"></a>2. Use plural nouns</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-Use-sub-resources-for-relations"><span class="toc-text"><a href="#3-Use-sub-resources-for-relations" class="headerlink" title="3. Use sub-resources for relations"></a>3. Use sub-resources for relations</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-Provide-filtering-sorting-and-paging-for-collections"><span class="toc-text"><a href="#4-Provide-filtering-sorting-and-paging-for-collections" class="headerlink" title="4. Provide filtering, sorting and paging for collections"></a>4. Provide filtering, sorting and paging for collections</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-Versioning-the-API"><span class="toc-text"><a href="#5-Versioning-the-API" class="headerlink" title="5. Versioning the API"></a>5. Versioning the API</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-Handle-Errors-with-HTTP-status-codes"><span class="toc-text"><a href="#6-Handle-Errors-with-HTTP-status-codes" class="headerlink" title="6. Handle Errors with HTTP status codes"></a>6. Handle Errors with HTTP status codes</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JSON-Specifications"><span class="toc-text"><a href="#JSON-Specifications" class="headerlink" title="JSON Specifications"></a>JSON Specifications</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#API"><span class="toc-text"><a href="#API" class="headerlink" title="API"></a>API</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Template"><span class="toc-text"><a href="#Template" class="headerlink" title="Template"></a>Template</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Users"><span class="toc-text"><a href="#Users" class="headerlink" title="Users"></a>Users</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-Registration"><span class="toc-text"><a href="#1-Registration" class="headerlink" title="1. Registration"></a>1. Registration</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-Login"><span class="toc-text"><a href="#2-Login" class="headerlink" title="2. Login"></a>2. Login</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-Get-User-Profiles"><span class="toc-text"><a href="#3-Get-User-Profiles" class="headerlink" title="3. Get User Profiles"></a>3. Get User Profiles</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-Update-User-Profiles"><span class="toc-text"><a href="#4-Update-User-Profiles" class="headerlink" title="4. Update User Profiles"></a>4. Update User Profiles</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Pictures"><span class="toc-text"><a href="#Pictures" class="headerlink" title="Pictures"></a>Pictures</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-Get-a-Picture"><span class="toc-text"><a href="#1-Get-a-Picture" class="headerlink" title="1. Get a Picture"></a>1. Get a Picture</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-Batch-Get-Pictures"><span class="toc-text"><a href="#2-Batch-Get-Pictures" class="headerlink" title="2. Batch Get Pictures"></a>2. Batch Get Pictures</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-Delete-a-picture"><span class="toc-text"><a href="#3-Delete-a-picture" class="headerlink" title="3. Delete a picture"></a>3. Delete a picture</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Tasks"><span class="toc-text"><a href="#Tasks" class="headerlink" title="Tasks"></a>Tasks</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-Create-a-Task"><span class="toc-text"><a href="#1-Create-a-Task" class="headerlink" title="1. Create a Task"></a>1. Create a Task</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-Get-Pictures-Related-to-a-Tasks"><span class="toc-text"><a href="#2-Get-Pictures-Related-to-a-Tasks" class="headerlink" title="2. Get Pictures Related to a Tasks"></a>2. Get Pictures Related to a Tasks</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-Get-tasks-id-multiple"><span class="toc-text"><a href="#3-Get-tasks-id-multiple" class="headerlink" title="3. Get tasks id multiple"></a>3. <em>Get tasks id multiple</em></span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-Get-task-Profiles"><span class="toc-text"><a href="#4-Get-task-Profiles" class="headerlink" title="4. Get task Profiles"></a>4. Get task Profiles</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-Update-task-Profiles"><span class="toc-text"><a href="#5-Update-task-Profiles" class="headerlink" title="5. Update task Profiles"></a>5. <del>Update task Profiles</del></span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Commits"><span class="toc-text"><a href="#Commits" class="headerlink" title="Commits"></a>Commits</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-Upload-a-commit"><span class="toc-text"><a href="#1-Upload-a-commit" class="headerlink" title="1. Upload a commit"></a>1. Upload a commit</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-Get-User-Commits"><span class="toc-text"><a href="#2-Get-User-Commits" class="headerlink" title="2. Get User Commits"></a>2. Get User Commits</span></a></li></ol></li></ol></li></ol></li></ol>
+    </div>
+  </div>
+
 
     <div class="post-content">
       
-        
-        
-
-        
-          <h1 id="API-Design-Document-v0-1"><a href="#API-Design-Document-v0-1" class="headerlink" title="API Design Document v0.1"></a>API Design Document v0.1</h1><h2 id="Table-of-Content"><a href="#Table-of-Content" class="headerlink" title="Table of Content"></a>Table of Content</h2><p>[TOC]</p>
+        <h1 id="API-Design-Document-v0-1"><a href="#API-Design-Document-v0-1" class="headerlink" title="API Design Document v0.1"></a>API Design Document v0.1</h1><h2 id="Table-of-Content"><a href="#Table-of-Content" class="headerlink" title="Table of Content"></a>Table of Content</h2><p>[TOC]</p>
 <h2 id="Conventions"><a href="#Conventions" class="headerlink" title="Conventions"></a>Conventions</h2><h3 id="1-Use-nouns-but-no-verbs"><a href="#1-Use-nouns-but-no-verbs" class="headerlink" title="1. Use nouns but no verbs"></a>1. Use nouns but no verbs</h3><table>
 <thead>
 <tr>
@@ -769,210 +772,76 @@
 </li>
 </ul>
 <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"errors"</span>: [&#123;</span><br><span class="line">        <span class="attr">"title"</span>: <span class="string">"You haven't take this task"</span>,</span><br><span class="line">        <span class="attr">"detail"</span>: <span class="string">"can not find commits of this task"</span>,</span><br><span class="line">        <span class="attr">"status"</span>: <span class="number">404</span></span><br><span class="line">    &#125;]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-        
       
     </div>
 
     
-
-    
-
-  </article>
-
-    
       
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2017/12/17/在Mac上使用tree命令浏览文件树结构-转/">在Mac上使用tree命令浏览文件树结构(转)</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2017-12-17
-        </span>
-        
-        
-      </div>
-    </header>
-
-    
-    
-
-    <div class="post-content">
       
-        
-        
 
-        
-          <h2 id="使用alias命令"><a href="#使用alias命令" class="headerlink" title="使用alias命令"></a>使用alias命令</h2><ol>
-<li><p>编辑<code>.bashrc</code>或者<code>.zshrc</code>，在文件中添加一行：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ vim .zshrc</span><br><span class="line"><span class="built_in">alias</span> tree=<span class="string">"find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>应用更改</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">source</span> .zshrc</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>在文件夹下使用<code>tree</code>命令就可以看到当前文件夹的层级结构了<br><img src="https://ws1.sinaimg.cn/large/c2dfc71dgy1fmjpgcu6dij20i50hqtaq.jpg" alt="效果图"></p>
-</li>
-</ol>
-<h2 id="安装tree包"><a href="#安装tree包" class="headerlink" title="安装tree包"></a>安装tree包</h2><p>如果想要更多功能，可以直接使用unix的<code>tree</code>包。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ brew install tree</span><br></pre></td></tr></table></figure></p>
-<p><a href="http://osxdaily.com/2016/09/09/view-folder-tree-terminal-mac-os-tree-equivalent/" target="_blank" rel="noopener">原文地址</a></p>
-
-        
+  <div class="post-copyright">
+    <p class="copyright-item">
+      <span>原文作者: </span>
+      <a href="http://peng-ym.github.io">Peng-YM</a>
+    </p>
+    <p class="copyright-item">
+      <span>原文链接: </span>
+      <a href="http://peng-ym.github.io/2018/04/10/微聚API设计/">http://peng-ym.github.io/2018/04/10/微聚API设计/</a>
+    </p>
+    <p class="copyright-item">
+      <span>许可协议: </span>
       
-    </div>
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
+    </p>
+  </div>
 
-    
 
-    
 
-  </article>
-
-    
       
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2017/12/15/利用Python-IMAP、SMTP进行邮件收发/">利用Python IMAP、SMTP进行邮件收发</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2017-12-15
-        </span>
-        
-        
-      </div>
-    </header>
-
-    
-    
-
-    <div class="post-content">
       
-        
-        
-
-        
-          
-        
-      
-    </div>
-
     
 
     
-
-  </article>
-
-    
-      
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
+      <footer class="post-footer">
         
-          <a class="post-link" href="/2017/12/15/Centos Apache-Htpd端口转发配置/">Apache Htpd端口转发配置</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2017-12-15
-        </span>
-        
-        
-      </div>
-    </header>
-
-    
-    
-
-    <div class="post-content">
-      
-        
-        
-          
-        
-
-        
-          <h2 id="安装httpd"><a href="#安装httpd" class="headerlink" title="安装httpd"></a>安装httpd</h2><p>Centos 安装httpd非常简单，<code>yum</code>安装即可<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum instal httpd</span><br></pre></td></tr></table></figure></p>
-<h2 id="配置转发规则示例"><a href="#配置转发规则示例" class="headerlink" title="配置转发规则示例"></a>配置转发规则示例</h2><p>在部署Java Web应用时，通常会把应用部署在一个Web容器（如Tomcat），再部署一个HTTP服务器转发请求。</p>
-<p>例如部署Tomcat监听8080端口，部署Apache Httpd监听80端口，再转发给tomcat的8080端口。</p>
-<p>可以在一台服务器上部署多个应用和配置多个域名，对于访问者来说感觉像访问两个不同的网站一样。<br>在示例中启动了两个Tomcat实例，分别监听8080和8081端口，部署两个不同的应用。然后将两个域名均指向这台机器的ip，Apache通过访问者使用的域名来执行不同的转发。</p>
-          <div class="read-more">
-            <a href="/2017/12/15/Centos Apache-Htpd端口转发配置/" class="read-more-link">阅读更多</a>
+          <div class="post-tags">
+            
+              <a href="/tags/Android/">Android</a>
+            
           </div>
         
-      
-    </div>
-
-    
-
-    
-
-  </article>
-
-    
-      
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2017/12/15/tmux使用指南/">tmux使用指南</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2017-12-15
-        </span>
         
         
-      </div>
-    </header>
-
+  <nav class="post-nav">
     
     
-
-    <div class="post-content">
-      
-        
-        
-          
-        
-
-        
-          <h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>Tmux 简单来说就是终端里的『窗口管理器』，如果我使用终端登录到远程主机并运行前台程序，那么这个窗口等于就被占用了，想要看一下 CPU 的使用率，就得再连接一次。但是如果在远程主机上运行 tmux，那么就可以开启多个控制台（类似于窗口），相当高效。可以通过下面的视频看看大神操作：</p>
-<center><iframe width="600" height="400" src="https://www.youtube.com/embed/JXwS7z6Dqic" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe></center>
-          <div class="read-more">
-            <a href="/2017/12/15/tmux使用指南/" class="read-more-link">阅读更多</a>
-          </div>
-        
-      
-    </div>
-
-    
-
-    
-
-  </article>
-
-    
-  </section>
-
-  
-  <nav class="pagination">
-    
+      <a class="next" href="/2017/12/17/在Mac上使用tree命令浏览文件树结构-转/">
+        <span class="next-text nav-default">在Mac上使用tree命令浏览文件树结构(转)</span>
+        <span class="prev-text nav-mobile">下一篇</span>
+        <i class="iconfont icon-right"></i>
+      </a>
     
   </nav>
 
+      </footer>
+    
+
+  </article>
+
 
           </div>
           
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
 
         </div>
       </main>
@@ -1033,6 +902,24 @@
     </div>
 
     
+  
+  <script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'http://peng-ym.github.io/2018/04/10/微聚API设计/';
+        this.page.identifier = '2018/04/10/微聚API设计/';
+        this.page.title = '微聚API设计';
+    };
+    (function() {
+    var d = document, s = d.createElement('script');
+
+    s.src = '//peng1m.disqus.com/embed.js';
+
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();  
+  </script>
+
+
 
 
     
