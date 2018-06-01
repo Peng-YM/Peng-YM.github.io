@@ -110,7 +110,7 @@
         <li class="mobile-menu-item">
           
           
-            Home
+            首页
           
         </li>
       </a>
@@ -119,7 +119,7 @@
         <li class="mobile-menu-item">
           
           
-            Archives
+            归档
           
         </li>
       </a>
@@ -128,7 +128,7 @@
         <li class="mobile-menu-item">
           
           
-            Tags
+            标签
           
         </li>
       </a>
@@ -137,7 +137,7 @@
         <li class="mobile-menu-item">
           
           
-            Categories
+            分类
           
         </li>
       </a>
@@ -146,7 +146,7 @@
         <li class="mobile-menu-item">
           
           
-            About
+            关于
           
         </li>
       </a>
@@ -167,7 +167,7 @@
           <a class="menu-item-link" href="/">
             
             
-              Home
+              首页
             
           </a>
         </li>
@@ -176,7 +176,7 @@
           <a class="menu-item-link" href="/archives/">
             
             
-              Archives
+              归档
             
           </a>
         </li>
@@ -185,7 +185,7 @@
           <a class="menu-item-link" href="/tags">
             
             
-              Tags
+              标签
             
           </a>
         </li>
@@ -194,7 +194,7 @@
           <a class="menu-item-link" href="/categories">
             
             
-              Categories
+              分类
             
           </a>
         </li>
@@ -203,7 +203,7 @@
           <a class="menu-item-link" href="/about">
             
             
-              About
+              关于
             
           </a>
         </li>
@@ -219,6 +219,50 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts">
+    
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          <a class="post-link" href="/2018/06/01/Java-Reflection-Tutorial/">Java Reflection Tutorial</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2018-06-01
+        </span>
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+    <div class="post-content">
+      
+        
+        
+          
+        
+
+        
+          <h2 id="Define-Data-Class"><a href="#Define-Data-Class" class="headerlink" title="Define Data Class"></a>Define Data Class</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.HashMap;</span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> String country;</span><br><span class="line">    <span class="keyword">public</span> String city;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> String finalValue;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> String inlineFinalValue = <span class="string">"inline-final"</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> String staticValue = <span class="string">"static"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Person</span><span class="params">()</span></span>&#123;</span><br><span class="line">        finalValue = <span class="string">"final"</span>;</span><br><span class="line">        System.out.println(<span class="string">"Executed no args constructor"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">Person</span><span class="params">(String country, String city, String name)</span></span>&#123;</span><br><span class="line">        finalValue = <span class="string">"final"</span>;</span><br><span class="line">        <span class="keyword">this</span>.country = country;</span><br><span class="line">        <span class="keyword">this</span>.city = city;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">        System.out.println(<span class="string">"Executed private constructor!"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> String <span class="title">getMobile</span><span class="params">(<span class="keyword">int</span> dummy)</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"getMobile() method invoked!"</span>);</span><br><span class="line">        System.out.println(<span class="string">"The argument is "</span> + dummy);</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"123456"</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">getStaticValue</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> staticValue;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">genericTypeTest</span><span class="params">(HashMap&lt;String, Person&gt; map, List&lt;String&gt; list)</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAge</span><span class="params">(<span class="keyword">int</span> age)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (age &lt; <span class="number">0</span> || age &gt; <span class="number">100</span>)&#123;</span><br><span class="line">            System.out.println(<span class="string">"Invalid Age!"</span>);</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">this</span>.age = age;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getAge</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> age;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> String.format(<span class="string">"Person: [Country: %s, City: %s, Name: %s, Age: %d, Final: %s, static: %s, Inline-final: %s]"</span>,</span><br><span class="line">                country, city, name, age, finalValue, staticValue, inlineFinalValue);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          <div class="read-more">
+            <a href="/2018/06/01/Java-Reflection-Tutorial/" class="read-more-link">阅读更多</a>
+          </div>
+        
+      
+    </div>
+
+    
+
+    
+
+  </article>
+
     
       
   <article class="post">
@@ -280,7 +324,7 @@
 <p><strong>Bad Examples!</strong></p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">/getAllCars</span><br><span class="line">/createNewCar</span><br><span class="line">/deleteAllCar</span><br></pre></td></tr></table></figure>
           <div class="read-more">
-            <a href="/2018/04/10/REST API Design/" class="read-more-link">Read more..</a>
+            <a href="/2018/04/10/REST API Design/" class="read-more-link">阅读更多</a>
           </div>
         
       
@@ -417,7 +461,7 @@
 <p>例如部署Tomcat监听8080端口，部署Apache Httpd监听80端口，再转发给tomcat的8080端口。</p>
 <p>可以在一台服务器上部署多个应用和配置多个域名，对于访问者来说感觉像访问两个不同的网站一样。<br>在示例中启动了两个Tomcat实例，分别监听8080和8081端口，部署两个不同的应用。然后将两个域名均指向这台机器的ip，Apache通过访问者使用的域名来执行不同的转发。</p>
           <div class="read-more">
-            <a href="/2017/12/15/Centos Apache-Htpd端口转发配置/" class="read-more-link">Read more..</a>
+            <a href="/2017/12/15/Centos Apache-Htpd端口转发配置/" class="read-more-link">阅读更多</a>
           </div>
         
       
@@ -462,7 +506,7 @@
           <h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>Tmux 简单来说就是终端里的『窗口管理器』，如果我使用终端登录到远程主机并运行前台程序，那么这个窗口等于就被占用了，想要看一下 CPU 的使用率，就得再连接一次。但是如果在远程主机上运行 tmux，那么就可以开启多个控制台（类似于窗口），相当高效。可以通过下面的视频看看大神操作：</p>
 <center><iframe width="600" height="400" src="https://www.youtube.com/embed/JXwS7z6Dqic" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe></center>
           <div class="read-more">
-            <a href="/2017/12/15/tmux使用指南/" class="read-more-link">Read more..</a>
+            <a href="/2017/12/15/tmux使用指南/" class="read-more-link">阅读更多</a>
           </div>
         
       
@@ -515,11 +559,11 @@
 
 <div class="copyright">
   <span class="power-by">
-    Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a>
+    由 <a class="hexo-link" href="https://hexo.io/">Hexo</a> 强力驱动
   </span>
   <span class="division">|</span>
   <span class="theme-info">
-    Theme - 
+    主题 - 
     <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
   </span>
 
