@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://peng-ym.github.io/"/>
-  <updated>2018-06-01T08:38:06.659Z</updated>
+  <updated>2018-09-15T02:24:01.925Z</updated>
   <id>http://peng-ym.github.io/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>SMS-EMOA</title>
+    <link href="http://peng-ym.github.io/2018/09/15/SMS-EMOA/"/>
+    <id>http://peng-ym.github.io/2018/09/15/SMS-EMOA/</id>
+    <published>2018-09-15T02:20:08.000Z</published>
+    <updated>2018-09-15T02:24:01.925Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Hypervolume"><a href="#Hypervolume" class="headerlink" title="Hypervolume"></a>Hypervolume</h2><p>In article <em>The Measure of Pareto Optima. Applications to Multi-objective Metaheuristics, Evolutionary Multi-Criterion Optimization</em>, Fleischer proved that, <strong>given a ﬁnite search space and a reference point, maximisation of the hypervolume measure is equivalent to ﬁnding the Pareto set.</strong></p><p>Use hypervolume metric in EMO:</p><h3 id="Bad"><a href="#Bad" class="headerlink" title="Bad"></a>Bad</h3><p>The absolute value depends on the choice of the reference.</p><h3 id="Good"><a href="#Good" class="headerlink" title="Good"></a>Good</h3><ul><li><p>The ranking of the solution is invariant to linear scaling of the objective functions.</p></li><li><p>The reference point only influences the relative contribution of the boundary points.</p></li></ul><a id="more"></a><h2 id="Algorithm"><a href="#Algorithm" class="headerlink" title="Algorithm"></a>Algorithm</h2><p>Steady-state algorithm</p><ol><li>Fast Non-dominated sorting is used as ranking criterion(Borrow from NSGA II).</li><li>Hypervolume is applied as selection criterion to discard <strong>an individual</strong> which contributes the <strong>least hypervolume</strong> to the <strong>worst-ranked front.</strong> Only one individual is generated and one is discarded in each generation to minimize the computation cost of hypervolume.</li></ol><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://ws1.sinaimg.cn/large/0069RVTdgy1fv9z5lbi4rj30m905ygmt.jpg" alt="" title="">                </div>                <div class="image-caption"></div>            </figure><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://ws2.sinaimg.cn/large/0069RVTdgy1fv9z56cx8jj30mc043t9t.jpg" alt="" title="">                </div>                <div class="image-caption"></div>            </figure><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://ws1.sinaimg.cn/large/0069RVTdgy1fv9z629semj307i00zt8p.jpg" alt="" title="">                </div>                <div class="image-caption"></div>            </figure><h2 id="Improved-Reduce-Algorithm"><a href="#Improved-Reduce-Algorithm" class="headerlink" title="Improved Reduce Algorithm"></a>Improved Reduce Algorithm</h2><p>When there are more than one front, use criterion in NSGA II to select individual. Otherwise use hypervolume</p><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://ws2.sinaimg.cn/large/0069RVTdgy1fva0hy4d17j30lm05m75r.jpg" alt="" title="">                </div>                <div class="image-caption"></div>            </figure><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://ws2.sinaimg.cn/large/0069RVTdgy1fv9z9v5aj8j30lr093q4m.jpg" alt="" title="">                </div>                <div class="image-caption"></div>            </figure><h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p>[1] M. Fleischer, The Measure of Pareto Optima. Applications to Multi-objective Metaheuristics, Evolutionary Multi-Criterion Optimization (EMO 2003), LNCS, vol. 2632, Springer, Berlin, 2003, pp. 519–533.</p><p>[2] Nicola Beume, SMS-EMOA: Multiobjective selection based on dominated hypervolume</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;Hypervolume&quot;&gt;&lt;a href=&quot;#Hypervolume&quot; class=&quot;headerlink&quot; title=&quot;Hypervolume&quot;&gt;&lt;/a&gt;Hypervolume&lt;/h2&gt;&lt;p&gt;In article &lt;em&gt;The Measure of Pareto Optima. Applications to Multi-objective Metaheuristics, Evolutionary Multi-Criterion Optimization&lt;/em&gt;, Fleischer proved that, &lt;strong&gt;given a ﬁnite search space and a reference point, maximisation of the hypervolume measure is equivalent to ﬁnding the Pareto set.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Use hypervolume metric in EMO:&lt;/p&gt;
+&lt;h3 id=&quot;Bad&quot;&gt;&lt;a href=&quot;#Bad&quot; class=&quot;headerlink&quot; title=&quot;Bad&quot;&gt;&lt;/a&gt;Bad&lt;/h3&gt;&lt;p&gt;The absolute value depends on the choice of the reference.&lt;/p&gt;
+&lt;h3 id=&quot;Good&quot;&gt;&lt;a href=&quot;#Good&quot; class=&quot;headerlink&quot; title=&quot;Good&quot;&gt;&lt;/a&gt;Good&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;The ranking of the solution is invariant to linear scaling of the objective functions.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;The reference point only influences the relative contribution of the boundary points.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+    
+      <category term="EMO" scheme="http://peng-ym.github.io/tags/EMO/"/>
+    
+  </entry>
   
   <entry>
     <title>Java Reflection Tutorial</title>
